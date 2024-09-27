@@ -3283,6 +3283,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "object"
+version = "0.36.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "084f1a5821ac4c651660a94a7153d27ac9d8a53736203f58b31945ded098070a"
+dependencies = [
+ "memchr",
+]
+
+[[package]]
 name = "once_cell"
 version = "1.19.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3488,19 +3497,22 @@ checksum = "14e6ab3f592e6fb464fc9712d8d6e6912de6473954635fd76a589d832cffcbb0"
 
 [[package]]
 name = "polkavm-common"
-version = "0.3.0"
-source = "git+https://github.com/koute/polkavm.git?rev=3552524a248a025de8e608394fcf9eb7c528eb11#3552524a248a025de8e608394fcf9eb7c528eb11"
+version = "0.11.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "254b19b64ff9b57c06b32c0affed961cb9a32429b8d3e5cf2633cad7fbb3e270"
 
 [[package]]
 name = "polkavm-linker"
-version = "0.3.0"
-source = "git+https://github.com/koute/polkavm.git?rev=3552524a248a025de8e608394fcf9eb7c528eb11#3552524a248a025de8e608394fcf9eb7c528eb11"
+version = "0.11.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "535a2095a186ccde2cd2fa721d6370c495586d47714817565b2f6621d31164b3"
 dependencies = [
  "gimli 0.28.1",
  "hashbrown 0.14.3",
  "log",
- "object 0.32.1",
+ "object 0.36.4",
  "polkavm-common",
+ "regalloc2",
  "rustc-demangle",
 ]
 
@@ -3818,6 +3830,19 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn 2.0.41",
+]
+
+[[package]]
+name = "regalloc2"
+version = "0.9.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ad156d539c879b7a24a363a2016d77961786e71f48f2e2fc8302a92abd2429a6"
+dependencies = [
+ "hashbrown 0.13.2",
+ "log",
+ "rustc-hash",
+ "slice-group-by",
+ "smallvec",
 ]
 
 [[package]]
@@ -4684,6 +4709,12 @@ checksum = "8f92a496fb766b417c996b9c5e57daf2f7ad3b0bebe1ccfca4856390e3d3bb67"
 dependencies = [
  "autocfg",
 ]
+
+[[package]]
+name = "slice-group-by"
+version = "0.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "826167069c09b99d56f31e9ae5c99049e932a98c9dc2dac47645b08dbbf76ba7"
 
 [[package]]
 name = "smallvec"

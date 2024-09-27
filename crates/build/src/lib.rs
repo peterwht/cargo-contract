@@ -324,6 +324,7 @@ fn exec_cargo_for_onchain_target(
         if matches!(target, Target::RiscV) {
             env.push(("RUSTUP_TOOLCHAIN", Some("rve-nightly".to_string())));
             fs::create_dir_all(&crate_metadata.target_directory)?;
+            // NOTE: linker file no longer necessary
             let path = crate_metadata
                 .target_directory
                 .join(".riscv_memory_layout.ld");
@@ -1021,7 +1022,7 @@ fn local_build(
                 Ok(linked) => linked,
                 Err(err) => bail!("Failed to link polkavm program: {}", err),
             };
-            fs::write(&crate_metadata.dest_code, linked.as_bytes())?;
+            fs::write(&crate_metadata.dest_code, linked)?;
         }
     }
 
